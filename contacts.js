@@ -1,6 +1,5 @@
 import path from "path";
-
-const fs = require("fs").promises;
+import { promises as fs } from "fs";
 
 const contactsPath = path.resolve("./db/contacts.json");
 
