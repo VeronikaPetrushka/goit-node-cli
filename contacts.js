@@ -1,17 +1,15 @@
 import path from "path";
 import { promises as fs } from "fs";
 
-const contactsPath = path.resolve("./db/contacts.json");
+const contactsPath = path.resolve("contacts.json");
 
 export async function listContacts() {
-  return fs
-    .readFile(contactsPath)
-    .then((data) => {
-      return data.toString();
-    })
-    .catch((err) => {
-      return err.message;
-    });
+  try {
+    const data = await fs.readFile(contactsPath);
+    return data.toString();
+  } catch (err) {
+    return err.message;
+  }
 }
 
 export async function getContactById(contactId) {
