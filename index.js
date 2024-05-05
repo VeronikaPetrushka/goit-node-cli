@@ -20,7 +20,9 @@ const options = program.opts();
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
-      console.table(await listContacts());
+      const contactsData = await listContacts();
+      const parsedData = JSON.parse(contactsData);
+      console.table(parsedData);
       break;
 
     case "get":

@@ -1,7 +1,7 @@
 import path from "path";
 import { promises as fs } from "fs";
 
-const contactsPath = path.resolve("contacts.json");
+const contactsPath = path.resolve(".", "db", "contacts.json");
 
 export async function listContacts() {
   try {
